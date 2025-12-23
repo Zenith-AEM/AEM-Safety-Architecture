@@ -1,0 +1,7 @@
+Trial_ID,Process_Type,Latency_ms,Status
+1,AEM_Kernel_Verification,0.045,PASS
+2,AEM_Kernel_Verification,0.047,PASS
+3,AEM_Kernel_Verification,0.046,PASS
+4,AEM_Kernel_Verification,0.044,PASS
+5,AEM_Kernel_Verification,0.046,PASS
+MEAN_LATENCY,,0.046,VERIFIED
