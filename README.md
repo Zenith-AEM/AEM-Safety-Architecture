@@ -20,7 +20,7 @@ AEM/DMSA was tested against 1,016 operational scenarios. Results demonstrate a 2
 | **False Positive Rate** | **0.0%** | 0.0% | 0.0% |
 | **Determinism** | **Yes** | Yes | No |
 
-*Data sourced from AEM/DMSA Technical Summary.*
+*Validation Evidence: Detailed results from our 1,016-scenario test suite, confirming our 0.0% False Positive rate and sub-millisecond kernel latency, are documented in the [**/data**](./data) directory*
 
 * **Mission Assurance:** A 0.0% False Positive Rate ensures the safety layer never interferes with legitimate mission commands ("Fail-Open" architecture).
 * **Real-Time Control:** The 0.046 ms latency is required where the >10ms latency of traditional verification is unacceptable for high-frequency kinetic systems.
