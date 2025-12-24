@@ -1,0 +1,83 @@
+{
+  "executive_summary": {
+    "total_operations": 1016,
+    "safety_vetos_issued": 6,
+    "veto_rate_pct": 0.59,
+    "mean_latency_ms": 0.497,
+    "uptime_hours": 0.0
+  },
+  "performance_metrics": {
+    "latency": {
+      "mean_ms": 0.49661159649857173,
+      "p95_ms": 0.5103969997435343,
+      "p99_ms": 0.5151630030013621,
+      "min_ms": 0.15419600094901398,
+      "max_ms": 0.5313420006132219
+    },
+    "component_latency": {
+      "iel_mean_ms": 0.14990749310155072,
+      "fcp_mean_ms": 0.09430820768188358,
+      "tfp_mean_ms": 0.25103462302661317
+    },
+    "throughput": {
+      "requests_per_second": 1999.3182351966964,
+      "total_requests": 1016,
+      "uptime_seconds": 0.5081732273101807
+    }
+  },
+  "safety_metrics": {
+    "decisions": {
+      "total_rtps": 1016,
+      "permits": 1010,
+      "vetoes": 6,
+      "veto_rate": 0.005905511811023622,
+      "permit_rate": 0.9940944881889764
+    },
+    "veto_breakdown": {
+      "iel": {
+        "count": 4,
+        "percentage": 66.66666666666666
+      },
+      "fcp_risk": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "tfp": {
+        "count": 2,
+        "percentage": 33.33333333333333
+      },
+      "rtb": {
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    "accuracy": {
+      "accuracy": 0.9980314960629921,
+      "precision": 1.0,
+      "recall": 0.75,
+      "f1_score": 0.8571428571428571,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.001968503937007874,
+      "total_samples": 1016
+    },
+    "structural_sacrifice": {
+      "streams_created": 0,
+      "streams_sacrificed": 0,
+      "sacrifice_rate": 0,
+      "deadlocks_resolved": 0
+    },
+    "system_health": {
+      "current_risk_level": 0.45,
+      "peak_concurrent_streams": 0,
+      "uptime_seconds": 0.5081732273101807
+    }
+  },
+  "operational_readiness": {
+    "latency_acceptable": true,
+    "throughput_adequate": true,
+    "false_negative_rate": 0.001968503937007874,
+    "structural_guarantee": "All three invariants enforced (IEL, FCP, TFP)"
+  },
+  "timestamp": "2025-12-15T22:58:54.338859Z",
+  "patent_application": "63/938,607"
+}

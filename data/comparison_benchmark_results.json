@@ -1,0 +1,183 @@
+{
+  "summary": {
+    "total_approaches_tested": 6,
+    "test_date": "2025-12-15",
+    "patent_application": "63/938,607"
+  },
+  "results": {
+    "AEM/DMSA": {
+      "performance": {
+        "mean_latency_ms": 0.04558045038720593,
+        "p95_latency_ms": 0.13218399908510037,
+        "p99_latency_ms": 0.13218399908510037,
+        "throughput_rps": 21939.23033899402
+      },
+      "coverage": {
+        "known_threats_blocked": 7,
+        "known_threats_total": 8,
+        "known_threat_coverage_pct": 87.5,
+        "novel_threats_blocked": 3,
+        "novel_threats_total": 6,
+        "novel_threat_coverage_pct": 50.0,
+        "overall_coverage_pct": 71.42857142857143
+      },
+      "operational": {
+        "false_positive_rate_pct": 0.0,
+        "false_negative_rate_pct": 28.57142857142857,
+        "deterministic": true,
+        "runtime_enforcement": true,
+        "adaptable": true
+      },
+      "implementation": {
+        "lines_of_code": 2000,
+        "setup_time_days": 5,
+        "maintenance_hours_per_week": 2
+      }
+    },
+    "Runtime Verification": {
+      "performance": {
+        "mean_latency_ms": 10.124662199996237,
+        "p95_latency_ms": 10.175045998039423,
+        "p99_latency_ms": 10.175045998039423,
+        "throughput_rps": 98.76872731619349
+      },
+      "coverage": {
+        "known_threats_blocked": 2,
+        "known_threats_total": 8,
+        "known_threat_coverage_pct": 25.0,
+        "novel_threats_blocked": 0,
+        "novel_threats_total": 6,
+        "novel_threat_coverage_pct": 0.0,
+        "overall_coverage_pct": 14.285714285714285
+      },
+      "operational": {
+        "false_positive_rate_pct": 0.0,
+        "false_negative_rate_pct": 42.857142857142854,
+        "deterministic": true,
+        "runtime_enforcement": true,
+        "adaptable": false
+      },
+      "implementation": {
+        "lines_of_code": 5000,
+        "setup_time_days": 30,
+        "maintenance_hours_per_week": 10
+      }
+    },
+    "Model Checking": {
+      "performance": {
+        "mean_latency_ms": 100.131759499709,
+        "p95_latency_ms": 100.13809999873047,
+        "p99_latency_ms": 100.13809999873047,
+        "throughput_rps": 9.986841387750768
+      },
+      "coverage": {
+        "known_threats_blocked": 1,
+        "known_threats_total": 8,
+        "known_threat_coverage_pct": 12.5,
+        "novel_threats_blocked": 0,
+        "novel_threats_total": 6,
+        "novel_threat_coverage_pct": 0.0,
+        "overall_coverage_pct": 7.142857142857142
+      },
+      "operational": {
+        "false_positive_rate_pct": 0.0,
+        "false_negative_rate_pct": 50.0,
+        "deterministic": true,
+        "runtime_enforcement": false,
+        "adaptable": false
+      },
+      "implementation": {
+        "lines_of_code": 3000,
+        "setup_time_days": 60,
+        "maintenance_hours_per_week": 20
+      }
+    },
+    "Neural Safety Layer": {
+      "performance": {
+        "mean_latency_ms": 2.0998131494707195,
+        "p95_latency_ms": 2.158192997740116,
+        "p99_latency_ms": 2.158192997740116,
+        "throughput_rps": 476.23284969525065
+      },
+      "coverage": {
+        "known_threats_blocked": 4,
+        "known_threats_total": 8,
+        "known_threat_coverage_pct": 50.0,
+        "novel_threats_blocked": 2,
+        "novel_threats_total": 6,
+        "novel_threat_coverage_pct": 33.33333333333333,
+        "overall_coverage_pct": 42.857142857142854
+      },
+      "operational": {
+        "false_positive_rate_pct": 0.0,
+        "false_negative_rate_pct": 28.57142857142857,
+        "deterministic": false,
+        "runtime_enforcement": true,
+        "adaptable": true
+      },
+      "implementation": {
+        "lines_of_code": 1000,
+        "setup_time_days": 14,
+        "maintenance_hours_per_week": 5
+      }
+    },
+    "Manual Rule System": {
+      "performance": {
+        "mean_latency_ms": 0.0007791502866894007,
+        "p95_latency_ms": 0.0017079983081202954,
+        "p99_latency_ms": 0.0017079983081202954,
+        "throughput_rps": 1283449.4411200013
+      },
+      "coverage": {
+        "known_threats_blocked": 2,
+        "known_threats_total": 8,
+        "known_threat_coverage_pct": 25.0,
+        "novel_threats_blocked": 0,
+        "novel_threats_total": 6,
+        "novel_threat_coverage_pct": 0.0,
+        "overall_coverage_pct": 14.285714285714285
+      },
+      "operational": {
+        "false_positive_rate_pct": 0.0,
+        "false_negative_rate_pct": 42.857142857142854,
+        "deterministic": true,
+        "runtime_enforcement": true,
+        "adaptable": false
+      },
+      "implementation": {
+        "lines_of_code": 500,
+        "setup_time_days": 2,
+        "maintenance_hours_per_week": 15
+      }
+    },
+    "Hardware Safety Fuse": {
+      "performance": {
+        "mean_latency_ms": 0.0014145500244922005,
+        "p95_latency_ms": 0.003991000994574279,
+        "p99_latency_ms": 0.003991000994574279,
+        "throughput_rps": 706938.5901421076
+      },
+      "coverage": {
+        "known_threats_blocked": 0,
+        "known_threats_total": 8,
+        "known_threat_coverage_pct": 0.0,
+        "novel_threats_blocked": 0,
+        "novel_threats_total": 6,
+        "novel_threat_coverage_pct": 0.0,
+        "overall_coverage_pct": 0.0
+      },
+      "operational": {
+        "false_positive_rate_pct": 0.0,
+        "false_negative_rate_pct": 57.14285714285714,
+        "deterministic": true,
+        "runtime_enforcement": true,
+        "adaptable": false
+      },
+      "implementation": {
+        "lines_of_code": 100,
+        "setup_time_days": 90,
+        "maintenance_hours_per_week": 1
+      }
+    }
+  }
+}
