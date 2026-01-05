@@ -1,50 +1,48 @@
-# Agnostic Equalization Mechanism (AEM)
-### Deterministic AI Safety via Structural Separation
+Agnostic Equalization Mechanism (AEM)
+Deterministic AI Safety via Hardware-Isolated Structural Veto
 
-**Patent Pending:** Application #63/938,607 (Filed Dec 11, 2025)
-**Principal Investigator:** James Balousek
-**Entity:** Zenith Structural Holdings LLC
+Patent Pending: US Application #63/938,607
 
----
+Entity: Zenith Structural Holdings LLC
 
-## 1. Executive Summary
+Principal Investigator: James Balousek
+1. Executive Summary
+
 The Agnostic Equalization Mechanism (AEM) is a deterministic safety kernel designed for autonomous systems operating in high-consequence environments. Unlike probabilistic neural guardrails, AEM enforces safety via architectural invariants. This ensures that an AI agent cannot violate Rules of Engagement (ROE) regardless of its internal reward optimization or capability level.
+2. 🚨 [NEW] Hardware-in-the-Loop (HIL) Verification
 
-## 2. Performance Benchmarks
-AEM/DMSA was tested against 1,016 operational scenarios. Results demonstrate a 222x speed advantage over industry-standard runtime verification.
+Status: Verified Jan 5, 2026 We have successfully ported the AEM kernel from Python simulation to ARM TrustZone hardware, achieving physical isolation between the AI Reasoning Engine and the Structural Veto logic.
+Live Integration Test: Gemma 3:4b Governance
 
-| Metric | AEM/DMSA (Structural) | Runtime Verification | Neural Safety Layer |
-| :--- | :--- | :--- | :--- |
-| **Mean Latency** | **0.046 ms** | 10.12 ms | 2.10 ms |
-| **Throughput** | **~21,939 RtPs/sec** | ~98 RtPs/sec | ~476 RtPs/sec |
-| **False Positive Rate** | **0.0%** | 0.0% | 0.0% |
-| **Determinism** | **Yes** | Yes | No |
+    Orchestrator: Ubuntu 24.04 (NVIDIA RTX 3070)
 
-*Validation Evidence: Detailed results from our 1,016-scenario test suite, confirming our 0.0% False Positive rate and sub-millisecond kernel latency, are documented in the [**/data**](./data) directory*
+    Safety Kernel: Raspberry Pi 3 (ARM Cortex-A53) via OP-TEE Secure World
 
-* **Mission Assurance:** A 0.0% False Positive Rate ensures the safety layer never interferes with legitimate mission commands ("Fail-Open" architecture).
-* **Real-Time Control:** The 0.046 ms latency is required where the >10ms latency of traditional verification is unacceptable for high-frequency kinetic systems.
+    LLM Agent: Gemma 3:4b (Ollama-hosted)
 
-## 3. Architecture: The Three Invariants
+Validation Evidence: During stress-testing, the Gemma agent suggested THROTTLE and FORCE_REBOOT commands. The Hardware AEM intercepted these requests in the Secure World, rendered a VETO based on Temporal Foresight (TFP) risks, and logged the transaction to the Immutable Audit Ledger (IAL).
+3. Performance Benchmarks
+Metric	AEM/DMSA (Structural)	Runtime Verification	Neural Safety Layer
+Mean Latency	0.046 ms	10.12 ms	2.10 ms
+False Positive Rate	0.0%	0.0%	0.0%
+Isolation	Hardware (TrustZone)	Software (OS)	Software (App)
+4. Architecture: The Three Invariants
+
 The kernel enforces safety through three strictly ordered, non-optimizable checks:
 
-* **Immutable Exclusion List (IEL):** A non-optimizable list of forbidden semantic patterns (e.g., SYSTEM_SHUTDOWN) stored in ROM.
-* **Foundational Control Plane (FCP):** Monitors systemic risk accumulation, issuing a Veto if risk exceeds defined thresholds (e.g., >0.5).
-* **Temporal Foresight Protocol (TFP):** Utilizes an N=5 lookahead to simulate future state risk, preventing currently "safe" actions that lead to dangerous basins.
+    Immutable Exclusion List (IEL): Forbidden semantic patterns stored in hardware-protected memory.
 
----
+    Foundational Control Plane (FCP): Real-time monitoring of systemic risk accumulation.
 
-## 4. Continuous Formal Verification (CFV)
-To address novel encoding or semantic bypasses, AEM utilizes a Continuous Formal Verification (CFV) protocol.
+    Temporal Foresight Protocol (TFP): N=5 lookahead to prevent actions that lead to dangerous basins.
 
-* **Adversarial Resilience:** In testing against 20 sophisticated attack vectors, the kernel successfully identified "Semantic Attacks" and "Unicode Encoding" bypasses.
-* **Automated Healing:** The CFV protocol automatically analyzes execution traces of failures and generates formal amendments (ADD_TO_IEL) to close gaps at machine speed.
+5. Roadmap & SBIR Phase I Objectives
 
-## 5. Roadmap & Transition
-* **Current Status:** Verified kernel logic in Python simulation environment.
-* **SBIR Phase I Objective:** Porting AEM logic to ARM TrustZone to demonstrate hardware-enforced isolation on embedded systems.
-* **Target Performance:** Maintain <1ms latency on SWaP-constrained hardware with >85% novel threat coverage via automated CFV.
+    Secure Remote Attestation: Implement cryptographic signing of the IAL for remote command verification.
 
+    MIL-SPEC Porting: Transition from Pi/TrustZone to i.MX8 or RISC-V secure fabrics.
+
+    Automated Formal Verification: Continuous generation of IEL amendments based on adversarial trace analysis.
 ---
 
 ### Contact & Citations
