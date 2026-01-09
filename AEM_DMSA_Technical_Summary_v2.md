@@ -18,6 +18,6 @@ The following metrics were verified over **567 test pulses** on the Broadcom BCM
 ## 3. The "Warm Path" Implementation
 The AEM provides a hardware-isolated "Structural Veto" by sitting in the **Warm Path** between the untrusted OS and the target system. 
 
-![AEM Warm Path Architecture](./images/warm_path.png)
+![AEM Warm Path Architecture](./images/WARM_PATH.png)
 
 *The AEM physically severs the command signal if the mission app violates the Immutable Exclusion List (IEL).*
