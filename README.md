@@ -1,59 +1,57 @@
-# Agnostic Equalization Mechanism (AEM)
-### Deterministic AI Safety via Hardware-Isolated Structural Veto
+Agnostic Equalization Mechanism (AEM)
+Deterministic AI Safety via Hardware-Isolated Structural Veto
 
-**Patent Pending:** US Application #63/938,607  
-**Principal Investigator:** James Balousek  
-**Entity:** Zenith Structural Holdings LLC
+Patent Pending: US Application #63/938,607
 
----
+Principal Investigator: James Balousek
 
-## 1. Executive Summary
-The Agnostic Equalization Mechanism (AEM) is a deterministic safety kernel designed for autonomous systems operating in high-consequence environments. Unlike probabilistic neural guardrails, AEM enforces safety via architectural invariants. This ensures that an AI agent cannot violate Rules of Engagement (ROE) regardless of its internal reward optimization or capability level.
+Entity: Zenith Structural Holdings LLC
+1. Executive Summary
 
----
+The Agnostic Equalization Mechanism (AEM) is a deterministic safety kernel designed for autonomous systems operating in high-consequence environments. Unlike probabilistic neural guardrails, AEM enforces safety via architectural invariants within the ARM TrustZone Secure World. This ensures that an AI agent cannot violate Rules of Engagement (ROE) regardless of its internal reward optimization or capability level.
+2. Hardware-in-the-Loop (HIL) Verification
 
-## 2. Hardware-in-the-Loop (HIL) Verification
-**Status:** Verified Jan 5, 2026  
-We have successfully transitioned the AEM logic from Python-based simulation to **Hardware-Isolated Execution**, achieving physical separation between the AI Reasoning Engine and the Structural Veto logic.
+Status: TRL 5 Validated Jan 9, 2026 The AEM logic has been fully ported to a Hardware-Isolated Execution environment (OP-TEE TEE), achieving physical separation between the AI Reasoning Engine (Normal World) and the Structural Veto logic (Secure World).
+Production Validation Environment
 
-### **Live Integration Test: Gemma 3:4b Governance**
-* **Orchestrator:** Ubuntu 24.04 (NVIDIA RTX 3070)
-* **Safety Kernel:** Raspberry Pi 3 (ARM Cortex-A53) via OP-TEE Secure World
-* **LLM Agent:** Gemma 3:4b (Ollama-hosted)
+    Host Orchestrator: Ubuntu 24.04 / RPi 3B Linux (Real-Time SCHED_FIFO priority)
 
-#### **Validation Results**
-During active stress-testing, the Gemma agent suggested `THROTTLE` and `FORCE_REBOOT` commands. The Hardware AEM intercepted these requests in the Secure World, rendered a VETO based on safety invariants, and logged the transaction to the Immutable Audit Ledger (IAL).
+    Safety Kernel: ARM Cortex-A53 (TrustZone / OP-TEE)
 
-> 🛡️ **Verification Evidence:** The raw hardware validation logs for the Jan 5th integration test are documented in the [**/data/validation_HIL_20260105.md**](./data/validation_HIL_20260105.md) directory.
+    Protocol: Active Enclave Monitor (AEM) via Shared-Memory Bridge
 
----
+Validation Results
 
-## 3. Performance Benchmarks
-| Metric | AEM/DMSA (Structural) | Runtime Verification | Neural Safety Layer |
-| :--- | :---: | :---: | :---: |
-| **Mean Latency** | **0.046 ms** | 10.12 ms | 2.10 ms |
-| **False Positive Rate** | **0.0%** | 0.0% | 0.0% |
-| **Isolation** | **Hardware (TrustZone)** | Software (OS) | Software (App) |
+The Safety Kernel successfully intercepted malicious command strings (e.g., AUTH_VETO) in the Secure World. The transition from the Normal World to the Secure Decision Enclave was measured at hardware-limited speeds, proving that a hardware-enforced "Veto" does not introduce significant system latency.
 
----
+    🛡️ Verification Evidence: The finalized production validation logs and logic matrix results are documented in the BENCHMARKS.md file.
 
-## 4. Architecture: The Three Invariants
-The kernel enforces safety through three strictly ordered, non-optimizable checks:
+3. Performance Benchmarks (TRL 5 Results)
+Metric	AEM (TrustZone)	Runtime Verification	Neural Safety Layer
+Mean Latency	0.0544 ms (54μs)	10.12 ms	2.10 ms
+Peak Performance	0.0107 ms (10μs)	8.50 ms	1.80 ms
+Isolation Level	Hardware (Enclave)	Software (OS)	Software (App)
+Decision Logic	Deterministic	Deterministic	Probabilistic
+4. Architecture: The Secure World Gatekeeper
 
-* **Immutable Exclusion List (IEL):** Forbidden semantic patterns stored in hardware-protected memory.
-* **Foundational Control Plane (FCP):** Real-time monitoring of systemic risk accumulation.
-* **Temporal Foresight Protocol (TFP):** N=5 lookahead to prevent actions that lead to dangerous basins.
+The kernel enforces safety through the Active Enclave Monitor (AEM). The Orchestrator places incoming network packets or command strings into a secure memory buffer, where the TrustZone-protected Trusted Application (TA) performs:
 
----
+    Deep Packet Inspection (DPI): Searching for semantic invariants without exposing the logic to the OS.
 
-## 5. Roadmap & SBIR Phase I Objectives
-* **Secure Remote Attestation:** Implement cryptographic signing of the IAL for remote command verification.
-* **MIL-SPEC Porting:** Transition from Pi/TrustZone to i.MX8 or RISC-V secure fabrics.
-* **Automated Formal Verification:** Continuous generation of IEL amendments based on adversarial trace analysis.
+    Structural VETO: Returning a cryptographic error code (0xf0100001) to drop dangerous frames instantly.
 
----
+    Silent Monitoring: Production builds operate in "Silent Mode" (no debug prints) to maintain sub-60μs throughput.
 
-## Contact & Citations
+5. Roadmap & SBIR Phase I Objectives
+
+    [x] TRL 4/5 Hardware Port: Completed Jan 2026.
+
+    [ ] Secure Remote Attestation: Implement cryptographic signing of the IAL for remote command verification.
+
+    [ ] MIL-SPEC Porting: Transition from Pi/TrustZone to i.MX8 or RISC-V secure fabrics.
+
+Contact & Citations
+
 For technical inquiries or full validation datasets, please contact James Balousek via Zenith Structural Holdings LLC.
 
-**Cite as:** Balousek, J. (2025). *Agnostic Equalization Mechanism (AEM): Structural Veto Kernel*. US Patent App #63/938,607.
+Cite as: Balousek, J. (2026). Agnostic Equalization Mechanism (AEM): Structural Veto Kernel. US Patent App #63/938,607.
