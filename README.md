@@ -17,7 +17,7 @@ The AEM addresses the "Safety Gap" in autonomous systems by hosting an **Immutab
 ## 📐 Architecture: The "Warm Path"
 The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) and the Target System (Tier 3).
 
-![AEM Warm Path Architecture](./WARM_PATH.jpg)
+![AEM Warm Path Architecture](./WARM_PATH.png)
 
 ## 💻 Hardware Configuration
 * **Safety Kernel:** Raspberry Pi 3 (Broadcom BCM2837) running OP-TEE 4.0.0.
