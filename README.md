@@ -18,7 +18,12 @@ The AEM addresses the "Safety Gap" in autonomous systems by hosting an **Immutab
 The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) and the Target System (Tier 3).
 
 ![AEM Warm Path Architecture](./WARM_PATH.png)
-
+Figure 1: AEM Hardware-in-the-Loop (HIL) Test Bed
+* Mission Orchestrator: Ubuntu-based host generating AI agent commands (Normal World).
+* Secured M2M Tunnel: A shared-memory bridge where strings like THROTTLE_100 are inspected.
+* AEM Safety Kernel: Raspberry Pi 3 running OP-TEE Secure World.
+* Structural Veto: Deterministic logic that severs unauthorized signals in 54.4 μs.
+    
 ## 💻 Hardware Configuration
 * **Safety Kernel:** Raspberry Pi 3 (Broadcom BCM2837) running OP-TEE 4.0.0.
 * **Host Environment:** aarch64 Buildroot (Kernel 6.7.0).
