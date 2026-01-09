@@ -1,57 +1,28 @@
-# Agnostic Equalization Mechanism (AEM)
-## Deterministic AI Safety via Hardware-Isolated Structural Veto
+# Zenith Agnostic Equalization Mechanism (AEM)
 
-**Patent Pending:** US Application #63/938,607  
-**Principal Investigator:** James Balousek  
-**Entity:** Zenith Structural Holdings LLC
+**Hardware-Rooted Deterministic Safety for Stochastic AI**
 
----
+## 🚀 Performance Breakthrough (Jan 9, 2026)
+As of the latest TRL 5 validation, the AEM has achieved a hardware-isolated interdiction latency of **54.4 μs**. This represents a **183x performance margin** over the 10ms stability requirements for the Sikorsky MATRIX™ flight control loop.
 
-## 1. Executive Summary
-The Agnostic Equalization Mechanism (AEM) is a deterministic safety kernel designed for autonomous systems. Unlike probabilistic neural guardrails, AEM enforces safety via **architectural invariants** within the ARM TrustZone Secure World.
+## 🛠 Project Overview
+The AEM addresses the "Safety Gap" in autonomous systems by hosting an **Immutable Exclusion List (IEL)** within the ARM TrustZone Secure World. It serves as a hardware-rooted "Structural Veto," physically intercepting and validating commands from untrusted Mission Applications (AI) before they reach flight actuators or secure databases.
 
----
+### Key Technical Documentation
+* **[Official DARPA DP2 Proposal](./Zenith_AEM_DP2_Proposal_Final.pdf)**: The full 13-page technical volume submitted for ALIAS-Texas.
+* **[TRL 5 Technical Appendix](./AEM_TRL5_Validation_Data.md)**: Detailed raw data from 567 test pulses and the shared-memory bridge architecture.
 
-## 2. Hardware-in-the-Loop (HIL) Verification
-**Status:** `TRL 5 Validated Jan 9, 2026`  
-The AEM logic has been fully ported to a **Hardware-Isolated Execution** environment (OP-TEE TEE).
+## 📐 Architecture: The "Warm Path"
+The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) and the Target System (Tier 3).
 
-### Production Validation Environment
-* **Host Orchestrator:** Ubuntu 24.04 / RPi 3B Linux (Real-Time `SCHED_FIFO` priority)
-* **Safety Kernel:** ARM Cortex-A53 (TrustZone / OP-TEE)
+![AEM Warm Path Architecture](./WARM_PATH.jpg)
 
-> 🛡️ **Verification Evidence:** [BENCHMARKS.md](./BENCHMARKS.md)
+## 💻 Hardware Configuration
+* **Safety Kernel:** Raspberry Pi 3 (Broadcom BCM2837) running OP-TEE 4.0.0.
+* **Host Environment:** aarch64 Buildroot (Kernel 6.7.0).
+* **Interdiction Path:** Shared-Memory Zero-Copy Bridge.
 
----
-
-## 3. Performance Benchmarks (TRL 5 Results)
-
-| Metric | AEM (TrustZone) | Runtime Verification | Neural Safety Layer |
-| :--- | :--- | :--- | :--- |
-| **Mean Latency** | **0.0544 ms (54μs)** | 10.12 ms | 2.10 ms |
-| **Peak Performance** | **0.0107 ms (10μs)** | 8.50 ms | 1.80 ms |
-| **Isolation Level** | **Hardware (Enclave)** | Software (OS) | Software (App) |
+![AEM HIL Testbed Configuration](./image_1c67c3.jpg)
 
 ---
-
-## 4. Architecture: The Secure World Gatekeeper
-The kernel enforces safety through the **Active Enclave Monitor (AEM)**:
-
-* **Deep Packet Inspection (DPI):** Searching for semantic invariants.
-* **Structural VETO:** Returning code `0xf0100001` to drop frames instantly.
-* **Silent Monitoring:** Production builds operate without debug prints for maximum throughput.
-
----
-
-## 5. Roadmap & SBIR Phase I Objectives
-- [x] **TRL 4/5 Hardware Port:** Completed Jan 2026.
-- [ ] **Secure Remote Attestation:** Cryptographic signing of the IAL.
-- [ ] **MIL-SPEC Porting:** Transition to i.MX8 or RISC-V.
-
----
-
- ## Contact & Citations
-
-For technical inquiries or full validation datasets, please contact James Balousek via Zenith Structural Holdings LLC (jamiebalousek@gmail.com). 
-
-**Cite as:** *Balousek, J. (2026). Agnostic Equalization Mechanism (AEM): Structural Veto Kernel. US Patent App #63/938,607.*
+© 2026 Zenith Structural Holdings LLC. All Rights Reserved.
