@@ -24,7 +24,7 @@ The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) a
 * **Host Environment:** aarch64 Buildroot (Kernel 6.7.0).
 * **Interdiction Path:** Shared-Memory Zero-Copy Bridge.
 
-![AEM HIL Testbed Configuration](./image_1c67c3.jpg)
+![AEM HIL Testbed Configuration](./HIL_Test_Bed.png)
 
 ---
 © 2026 Zenith Structural Holdings LLC. All Rights Reserved.
