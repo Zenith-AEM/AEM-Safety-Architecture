@@ -39,3 +39,12 @@ The leap from the January 5th benchmark (**0.987ms**) to the January 9th benchma
 * **Security Layer:** ARM TrustZone (Secure World Isolation)
 * **Trusted OS:** OP-TEE 4.0.0
 * **Host OS:** aarch64 Buildroot (Kernel 6.7.0)
+
+@manual{balousek2026aem,
+  title  = {Agnostic Equalization Mechanism (AEM): Structural Veto Kernel v2.0},
+  author = {Balousek, James},
+  note   = {US Patent App #63/938,607. Zenith Structural Holdings LLC},
+  year   = {2026},
+  month  = {January},
+  url    = {https://github.com/Zenith-AEM/AEM-Safety-Architecture}
+}
