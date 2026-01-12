@@ -13,7 +13,7 @@ The AEM addresses command validation for untrusted AI agents in autonomous syste
 * **[Technical Synopsis](./TECHNICAL_SYNOPSIS.md):** The consolidated technical volume].
 * **[Validation Benchmarks](./BENCHMARKS.md):** Raw data from 567 test pulses and performance metrics.
 * **[Security Policy](./SECURITY.md):** Vulnerability disclosure and hardware-isolation protocols.
-* **[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms[cite: 5, 44].
+* **[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms.
 
 ## 📐 Architecture: The "Warm Path"
 The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) and the Target System (Tier 3).
