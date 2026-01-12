@@ -13,7 +13,7 @@ B. OS-Level Kernel Compromise (Cybersecurity)
 
     AEM Mitigation: Because the AEM resides in ARM TrustZone, it is hardware-isolated from the Host OS. Even a full kernel compromise cannot modify the Immutable Exclusion List (IEL) or the Immutable Audit Ledger (IAL).
 
-C. Unauthorized Data State-Changes (Healthcare/Cloudicity)
+C. Unauthorized Data State-Changes (Healthcare)
 
     The Threat: A database management AI attempts an unauthorized bulk-export of synthetic patient records (e.g., Synthea datasets) to an external IP.
 
