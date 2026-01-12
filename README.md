@@ -1,6 +1,6 @@
 # Zenith Agnostic Equalization Mechanism (AEM)
 
-**Hardware-Rooted Deterministic Safety for Stochastic AI**
+**"Hardware-Isolated Safety Kernel for Autonomous Systems**
 
 ## 🚀 Performance Breakthrough (Jan 9, 2026)
 As of the lastest validation, the AEM has achieved a hardware-isolated interdiction latency of **54.4 μs**. This represents a **183x performance margin** over the 10ms stability requirements for the Sikorsky MATRIX™ flight control loop.
