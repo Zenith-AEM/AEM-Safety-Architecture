@@ -1,4 +1,4 @@
-# AEM Technical Summary v2.0
+# AEM Technical Synopsis
 **Date:** January 9, 2026 | **Validation Status:** TRL 4 
 
 ## 1. Breakthrough Performance
