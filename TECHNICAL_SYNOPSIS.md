@@ -2,7 +2,7 @@
 **Date:** January 9, 2026 | **Validation Status:** TRL 4 
 
 ## 1. Breakthrough Performance
-As of the latest validation, the AEM has achieved a hardware-isolated interdiction latency of 54.4 μs (TRL 4). This provides sub-millisecond safety determinism that exceeds current autonomous control requirements—from flight control loops to automated healthcare record batch appendements—by several orders of magnitude.
+As of the latest validation, the AEM has achieved a hardware-isolated interdiction latency of 54.4 μs (TRL 4). This provides sub-millisecond safety determinism that exceeds current autonomous control requirements by several orders of magnitude.
 
 * **Mean Interdiction Latency:** 54.4 μs
 * **Peak Performance:** 10.7 μs
