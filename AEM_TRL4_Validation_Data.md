@@ -1,5 +1,6 @@
 # AEM TRL 4 Technical Appendix: HIL Validation Data
 
+**Validation Type:** Laboratory Component Testing (Self-Conducted)  
 **Date:** January 9, 2026  
 **Platform:** Broadcom BCM2837 (ARMv8-A) / OP-TEE 4.0.0  
 **Architecture:** Shared-Memory Bridge (Zero-Copy)
