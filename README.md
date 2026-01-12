@@ -10,7 +10,7 @@ The AEM addresses the "Safety Gap" in autonomous systems by hosting an **Immutab
 
 ## 📚 Key Technical Documentation
 * **[Executive Summary v2.0](./EXECUTIVE_SUMMARY.md):** The architectural vision for solving the AGI Deterministic Crisis.
-* **[Official AEM Technical Summary v2.0](./AEM_DMSA_Technical_Summary_v2.md):** The consolidated technical volume].
+* **[Technical Synopsis](./TECHNICAL_SYNOPSIS.md):** The consolidated technical volume].
 * **[Validation Benchmarks](./BENCHMARKS.md):** Raw data from 567 test pulses and performance metrics.
 * **[Security Policy](./SECURITY.md):** Vulnerability disclosure and hardware-isolation protocols.
 * **[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms[cite: 5, 44].
