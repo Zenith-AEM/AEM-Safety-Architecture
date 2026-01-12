@@ -1,4 +1,4 @@
-# AEM TRL 5 Technical Appendix: HIL Validation Data
+# AEM TRL 4 Technical Appendix: HIL Validation Data
 
 **Date:** January 9, 2026  
 **Platform:** Broadcom BCM2837 (ARMv8-A) / OP-TEE 4.0.0  
