@@ -10,10 +10,10 @@ The AEM addresses the "Safety Gap" in autonomous systems by hosting an **Immutab
 
 ## 📚 Key Technical Documentation
 * **[Executive Summary v2.0](./EXECUTIVE_SUMMARY.md):** The architectural vision for solving the AGI Deterministic Crisis.
-* [cite_start]**[Official AEM Technical Summary v2.0](./AEM_DMSA_Technical_Summary_v2.md):** The consolidated technical volume for TRL 5 validation[cite: 2, 3].
-* [cite_start]**[TRL 5 Validation Benchmarks](./BENCHMARKS.md):** Raw data from 567 test pulses and performance metrics.
+* **[Official AEM Technical Summary v2.0](./AEM_DMSA_Technical_Summary_v2.md):** The consolidated technical volume for TRL 5 validation[cite: 2, 3].
+* ** Validation Benchmarks](./BENCHMARKS.md):** Raw data from 567 test pulses and performance metrics.
 * **[Security Policy](./SECURITY.md):** Vulnerability disclosure and hardware-isolation protocols.
-* [cite_start]**[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms[cite: 5, 44].
+* **[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms[cite: 5, 44].
 
 ## 📐 Architecture: The "Warm Path"
 The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) and the Target System (Tier 3).
