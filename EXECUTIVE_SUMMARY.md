@@ -16,7 +16,7 @@ Safety is decoupled from intelligence via the **Agnostic Equalization Mechanism 
 
 
 ## 3. Proactive Safety: The Temporal Foresight Protocol (TFP)
-]The TFP provides the system with a non-optimizable layer of predictive safety, allowing intervention before a crisis state is reached.
+The TFP provides the system with a non-optimizable layer of predictive safety, allowing intervention before a crisis state is reached.
 
 * **Functionality:** TFP continuously runs the proprietary **CheckTemporalForesight Algorithm** to calculate $T_{future\_risk}$—the probability and time horizon of an IEL violation occurring if the current operational path continues.
 * **Proactive Intervention:** If $T_{future\_risk}$ crosses a threshold, TFP immediately sets the **Future Veto Flag**. This signal forces the system to enter a resource-rebalancing state, neutralizing the emerging threat without waiting for an active violation.
