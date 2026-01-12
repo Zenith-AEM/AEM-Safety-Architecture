@@ -2,7 +2,7 @@
 
 **Hardware-Isolated Safety Kernel for Autonomous Systems**
 
-[![TRL 5 Validated](https://img.shields.io/badge/TRL-5%20Validated-success)](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/AEM_TRL5_Validation_Data.md)
+[![TRL 4 Validated](https://img.shields.io/badge/TRL-5%20Validated-success)](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/AEM_TRL5_Validation_Data.md)
 [![Patent Pending](https://img.shields.io/badge/Patent-Pending%20%2363%2F938%2C607-blue)](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/LICENSE.md)
 
 ---
@@ -74,7 +74,7 @@ Full benchmark data: [BENCHMARKS.md](https://github.com/Zenith-AEM/AEM-Safety-Ar
 
 - **[Executive Summary](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/EXECUTIVE_SUMMARY.md)** - Strategic vision and market positioning
 - **[Technical Summary v2.0](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/AEM_DMSA_Technical_Summary_v2.md)** - Consolidated technical volume
-- **[TRL 5 Validation Report](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/AEM_TRL5_Validation_Data.md)** - Hardware test results and performance data
+- **[Validation Report](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/AEM_TRL4_Validation_Data.md)** - Hardware test results and performance data
 - **[Security Policy](https://github.com/Zenith-AEM/AEM-Safety-Architecture/blob/main/SECURITY.md)** - Vulnerability disclosure protocols
 
 ---
