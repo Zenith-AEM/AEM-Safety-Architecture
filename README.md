@@ -6,7 +6,7 @@
 As of the lastest validation, the AEM has achieved a hardware-isolated interdiction latency of **54.4 μs**. This represents a **183x performance margin** over the 10ms stability requirements for the Sikorsky MATRIX™ flight control loop.
 
 ## 🛠 Project Overview
-The AEM addresses the "Safety Gap" in autonomous systems by hosting an **Immutable Exclusion List (IEL)** within the ARM TrustZone Secure World. It serves as a hardware-rooted "Structural Veto," physically intercepting and validating commands from untrusted Mission Applications (AI) before they reach flight actuators or secure databases.
+The AEM addresses command validation for untrusted AI agents in autonomous systems by hosting an **Immutable Exclusion List (IEL)** within the ARM TrustZone Secure World. It serves as a hardware-rooted "Structural Veto," physically intercepting and validating commands from untrusted Mission Applications (AI) before they reach flight actuators or secure databases.
 
 ## 📚 Key Technical Documentation
 * **[Executive Summary v2.0](./EXECUTIVE_SUMMARY.md):** The architectural vision for solving the AGI Deterministic Crisis.
