@@ -27,9 +27,11 @@ The AEM addresses command validation for untrusted AI agents in autonomous syste
 
 ## 📚 Key Technical Documentation
 
-* **[Executive Summary v2.0](./EXECUTIVE_SUMMARY.md):** The architectural vision for solving the AGI Deterministic Crisis.
-* **[Technical Synopsis](./TECHNICAL_SYNOPSIS.md):** The consolidated technical volume.
-* **[Validation Benchmarks](./BENCHMARKS.md):** Raw data from 567 test pulses and performance metrics.
+* **[Executive Summary](./EXECUTIVE_SUMMARY.md):** Vision for structural AGI safety architecture.
+* **[Technical Synopsis](./TECHNICAL_SYNOPSIS.md):** Consolidated technical overview and performance metrics.
+* **[TRL 4 Validation Data](./AEM_TRL4_Validation_Data.md):** Complete HIL validation results and benchmarking.
+* **[Benchmark Logs](./BENCHMARKS.md):** Raw data from 567 test pulses and logic verification.
+* **[Threat Model](./THREAT_MODEL.md):** Security posture and mitigation strategies.
 * **[Security Policy](./SECURITY.md):** Vulnerability disclosure and hardware-isolation protocols.
 * **[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms.
 
