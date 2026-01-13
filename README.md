@@ -1,5 +1,18 @@
 # Zenith Agnostic Equalization Mechanism (AEM)
 
+## Quick Start: The Problem & Solution
+The Problem: AI systems (LLMs, autonomous agents) are probabilistic by nature. They can generate plausible-but-catastrophic commands like THROTTLE_100 when the aircraft is already near structural limits. Traditional software safety checks can be bypassed, disabled, or corrupted by the very AI they're meant to control.
+The Solution: The AEM is a hardware-rooted veto switch that physically sits between your AI and your actuators. It hosts an Immutable Exclusion List (IEL) in ARM TrustZone's Secure World - isolated hardware that the AI literally cannot access or modify.
+How It Works:
+
+AI agent generates a command (e.g., DEPLOY_FLAPS)
+Command enters the Secured M2M Tunnel (shared memory bridge)
+AEM Safety Kernel checks it against the IEL in 54.4 microseconds
+If prohibited → command is severed before reaching hardware
+If allowed → command passes through to actuators
+
+Current Status: TRL 4 validated on Raspberry Pi 3 + OP-TEE. TRL 5 ready for integration testing with target platforms (Sikorsky MATRIX™, autonomous drones, database guardians).
+
 **"Hardware-Isolated Safety Kernel for Autonomous Systems**
 
 ## 🚀 Performance Breakthrough (Jan 9, 2026)
