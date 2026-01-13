@@ -18,7 +18,7 @@ During the Hardware-in-the-Loop (HIL) stress test, the AEM intercepted 100% of t
 | **99th Percentile** | **94.2 μs** | 10.0 ms | 106x |
 | **System Jitter** | **< 45 μs** | N/A | N/A |
 
-
+---
 
 ## 2. Performance Benchmarking vs. Legacy Drivers
 
@@ -27,6 +27,8 @@ The leap from the January 5th benchmark (**0.987ms**) to the January 9th benchma
 * **Network-Based Interdiction (Jan 5):** 987.0 μs
 * **Shared-Memory Interdiction (Jan 9):** 54.4 μs
 * **Net Efficiency Gain:** 94.5% latency reduction
+
+---
 
 ## 3. Forensic Integrity (IAL)
 
@@ -41,6 +43,11 @@ The leap from the January 5th benchmark (**0.987ms**) to the January 9th benchma
 * **Trusted OS:** OP-TEE 4.0.0
 * **Host OS:** aarch64 Buildroot (Kernel 6.7.0)
 
+---
+
+## 5. Citation
+
+```bibtex
 @manual{balousek2026aem,
   title  = {Agnostic Equalization Mechanism (AEM): Structural Veto Kernel v2.0},
   author = {Balousek, James},
@@ -49,3 +56,4 @@ The leap from the January 5th benchmark (**0.987ms**) to the January 9th benchma
   month  = {January},
   url    = {https://github.com/Zenith-AEM/AEM-Safety-Architecture}
 }
+```
