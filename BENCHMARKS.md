@@ -29,7 +29,7 @@ The Trusted Application (TA) was subjected to a logic stress test to verify Deep
 
 ## 3. Production Environment Details
 * **Hardware:** Raspberry Pi 3 Model B (BCM2837)
-* **TrustZone OS:** OP-TEE 3.16.0
+* **TrustZone OS:** OP-TEE 4.0.0
 * **Decision Enclave:** `aem_veto_kernel.ta`
 * **Transport:** UDP/IP Port 5555
 * **Priority:** `SCHED_FIFO` (chrt -f 99)
