@@ -1,4 +1,7 @@
 # Executive Summary: The Agnostic Equalization Mechanism (AEM)
+
+> **Historical architecture summary (January 2026).** This page records earlier self-reported measurements and proposed system behavior. Its TRL, production-readiness, immutable-ledger and future-risk claims are not established by the November 2026 QEMU test. See the [current status](README.md) and [bounded QEMU milestone](QEMU_MILESTONE_2026_11.md).
+
 **Vision for Structural AGI Safety and Resilience** 
 
 ---

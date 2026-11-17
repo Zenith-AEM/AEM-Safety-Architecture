@@ -1,5 +1,8 @@
 # AEM TRL 4 Technical Appendix: HIL Validation Data
 
+> **Historical self-conducted test report (January 2026).** The figures below describe an earlier laboratory setup. They have not been independently audited here and do not establish crash-safe immutable storage or a production safety rating. See the [current status](README.md) and [bounded QEMU milestone](QEMU_MILESTONE_2026_11.md).
+
+
 **Validation Type:** Laboratory Component Testing (Self-Conducted)  
 **Date:** January 9, 2026  
 **Platform:** Broadcom BCM2837 (ARMv8-A) / OP-TEE 4.0.0  
