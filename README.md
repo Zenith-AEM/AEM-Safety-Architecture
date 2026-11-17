@@ -1,6 +1,6 @@
 # Agnostic Equalization Mechanism (AEM)
 
-AEM is a research effort to put a separate decision gate between an autonomous controller's request and a defined effect. The intended sidecar appliance would permit or veto the request before its output can act, then retain evidence a reviewer can inspect.
+AEM is a research architecture for putting a governed decision boundary between an autonomous controller's request and a defined effect. It could be integrated into a new system or deployed as a separate pass-through unit. In either form, the goal is for an action to reach the controlled effect only after an explicit permit, with evidence retained for review.
 
 Read [what remains the same and what has changed](AEM_PRINCIPLES_AND_STATUS.md) for a plain-language account of the project.
 
@@ -14,7 +14,7 @@ This test uses development signing material and a public demo HMAC key. The effe
 
 ## Where this is going
 
-The next prototype target is a bench sidecar controlling one harmless physical load, with an independent effect measurement, repeatable permit and veto cases, fault tests, restart replay and a complete proof package. Product hardware has not been selected. The QEMU result is a software baseline for that work, not a completed sidecar.
+The next prototype target uses the separate-unit form: a bench sidecar controlling one harmless physical load, with an independent effect measurement, repeatable permit and veto cases, fault tests, restart replay and a complete proof package. An integrated deployment would need to demonstrate the same decision, output-control and evidence boundaries. Product hardware has not been selected. The QEMU result is a software baseline for that work, not a completed sidecar.
 
 ## Earlier work and documents
 

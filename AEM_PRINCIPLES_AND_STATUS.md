@@ -1,6 +1,6 @@
 # What remains the same in AEM
 
-**Short answer:** This is still the same AEM idea, developed into a more precise and testable prototype. The goal remains a separate gate between a controller's request and a defined effect.
+**Short answer:** This is still the same AEM idea, developed into a more precise and testable prototype. The goal remains a governed gate between a controller's request and a defined effect. That gate could be integrated into a new deployment or packaged as a separate pass-through unit, provided the requester cannot bypass its control boundary.
 
 ## The enduring principles
 
@@ -18,6 +18,8 @@ The early public pages described the intended architecture in broad terms, inclu
 The TFP forward check in this demo repeats one proposed action over five modeled steps. Its rule and threshold are fixed and published. It is not a general prediction of what an autonomous system will do. The ledger is inspectable in this run; it is not yet proven immutable against a privileged attacker. The separate effect capture proves what this QEMU client recorded, not what a physical actuator did.
 
 ## The next proof
+
+The sidecar is the current test configuration, not the only AEM deployment form. An integrated design would have to prove that its controller cannot bypass the gate or reach the protected output through another route.
 
 A stable sidecar prototype would route one harmless physical action through a separate AEM unit and measure the effect with an independent instrument. It must show permit, veto, malformed input, interruption, restart and replay under a frozen test plan. A qualified reviewer should be able to inspect the raw results and the ways the test could have failed.
 
