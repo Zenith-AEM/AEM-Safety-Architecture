@@ -1,6 +1,8 @@
 # Agnostic Equalization Mechanism (AEM)
 
-AEM is a research architecture for putting a governed decision boundary between an autonomous controller's request and a defined effect. It could be integrated into a new system or deployed as a separate pass-through unit. In either form, the goal is for an action to reach the controlled effect only after an explicit permit, with evidence retained for review.
+AEM is a research architecture for deciding whether an autonomous controller's request may reach a defined effect. Its decision logic is intended to run outside the requester’s operating system. In the current QEMU test, fixed requests pass through a Gateway Authority to an OP-TEE trusted application in an **emulated Arm TrustZone secure world**. That application applies an exclusion list, an exact action vocabulary, an immediate risk check (FCP) and a five-step forward check (TFP), in that order. It keeps decision state and a ledger through OP-TEE storage.
+
+AEM could be integrated into a new system or deployed as a separate pass-through unit. Either form must eventually make the controlled output inaccessible to the requester without a permit. The current QEMU client writes a marker after a permit; the client itself controls that marker, so this run does not prove protected output enforcement.
 
 Read [what remains the same and what has changed](AEM_PRINCIPLES_AND_STATUS.md) for a plain-language account of the project.
 
@@ -10,11 +12,11 @@ The latest public milestone is a [two-boot QEMU decision and evidence test](QEMU
 
 The [small replay packet](QEMU_MILESTONE_2026_11.md#replay-the-public-subset) contains the exact final ledger and effect bytes, checker source, its model and fixtures. The full run packet, including firmware images, disk snapshots, console logs and build inputs, is retained locally and is **not** included here. This public subset supports inspection of the captured decision and effect sequence; it cannot independently establish everything that ran in QEMU.
 
-This test uses development signing material and a public demo HMAC key. The effect is a client marker, not a physical actuator. It does not establish a production trust root, resistance to a privileged attacker, general crash durability or hardware safety.
+This test uses development signing material and a public demo HMAC key. QEMU emulates the secure world; it does not demonstrate physical isolation. The effect is a client marker, not a physical actuator. Privileged normal-world code could bypass that marker path or interfere with the storage backing. The controlled restart shows state readback in this run, not rollback resistance or general crash durability. It does not establish a production trust root or hardware safety. The public replay subset also omits the trusted-application and Authority source, so it cannot independently audit the secure-world implementation.
 
 ## Where this is going
 
-The next prototype target uses the separate-unit form: a bench sidecar controlling one harmless physical load, with an independent effect measurement, repeatable permit and veto cases, fault tests, restart replay and a complete proof package. An integrated deployment would need to demonstrate the same decision, output-control and evidence boundaries. Product hardware has not been selected. The QEMU result is a software baseline for that work, not a completed sidecar.
+The QEMU run is a software baseline. The next proof work is to establish resistant state and evidence storage, and an output path the requester cannot drive without a permit. Board B's RPMB work is one research route for the storage question; it has not established safe target use or rollback resistance. A bench sidecar controlling one harmless load is a possible test configuration for output enforcement. An integrated design would have to prove the same boundary. Product hardware and deployment form have not been selected.
 
 ## Earlier work and documents
 

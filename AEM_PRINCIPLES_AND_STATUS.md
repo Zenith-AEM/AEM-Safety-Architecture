@@ -1,14 +1,14 @@
 # What remains the same in AEM
 
-**Short answer:** This is still the same AEM idea, developed into a more precise and testable prototype. The goal remains a governed gate between a controller's request and a defined effect. That gate could be integrated into a new deployment or packaged as a separate pass-through unit, provided the requester cannot bypass its control boundary.
+**Short answer:** This is still the same AEM idea, developed into a more precise and testable research implementation. The goal remains a decision outside the requester's operating system, followed by an output path the requester cannot bypass. The current decision runs in OP-TEE's emulated secure world in QEMU. The output path remains a normal-world client marker. The architecture could be integrated into a new deployment or packaged as a separate pass-through unit.
 
 ## The enduring principles
 
 | Principle | Meaning | Where we are now |
 | --- | --- | --- |
-| A separate decision | The controller proposes an action; AEM decides whether that exact request may reach the effect path. | The QEMU client sends fixed requests through a Gateway Authority and child trusted application. A physical sidecar path has not been built. |
+| A separate decision | The controller proposes an action; AEM decides whether that exact request may reach the effect path. | The QEMU client sends fixed requests through a Gateway Authority to an OP-TEE trusted application in emulated Arm TrustZone. A physical output gate has not been built. |
 | Veto before effect | A denied or malformed request must not activate the controlled output. A missing answer is not permission. | The nine-request QEMU run produced five effect markers for five permits and none for four vetoes. The marker is a virtual client output, not an actuator. |
-| Constrained authority | The requester should not be able to rewrite the rule or bypass the gate. | The QEMU decision sequence tests ordering and some failure cases. It does not prove resistance to a privileged attacker, a protected physical output, or a production trust root. |
+| Constrained authority | The requester should not be able to rewrite the rule or bypass the gate. | The trusted application applies the fixed test checks and uses OP-TEE storage. The client still controls the marker, and the run does not prove privileged-attacker resistance, rollback resistance or a production trust root. |
 | Inspectable evidence | A reviewer should be able to trace a request to its decision and observed effect, including after interruption. | The QEMU run retained a ledger and separate effect capture. The exact public bytes pass an offline checker after a controlled restart. General power-loss durability and independent provenance remain open. |
 
 ## What became more precise
@@ -19,9 +19,9 @@ The TFP forward check in this demo repeats one proposed action over five modeled
 
 ## The next proof
 
-The sidecar is the current test configuration, not the only AEM deployment form. An integrated design would have to prove that its controller cannot bypass the gate or reach the protected output through another route.
+The outstanding questions are whether decision state and evidence can resist rollback, and whether the output can be driven only after a permit. These are proof obligations, not a dated product roadmap. Board B's RPMB research has not yet established safe target use or rollback resistance.
 
-A stable sidecar prototype would route one harmless physical action through a separate AEM unit and measure the effect with an independent instrument. It must show permit, veto, malformed input, interruption, restart and replay under a frozen test plan. A qualified reviewer should be able to inspect the raw results and the ways the test could have failed.
+A bench sidecar is one possible way to test output control with a harmless load and independent effect measurement. An integrated design would need to prove the same gate cannot be bypassed. Either path needs repeatable permit, veto, malformed-input, interruption and restart tests, with raw results a reviewer can inspect.
 
 That is the same safety proposition made concrete. [Read the current QEMU milestone](QEMU_MILESTONE_2026_11.md) for the tested software result and its limits.
 
