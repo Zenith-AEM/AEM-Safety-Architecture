@@ -3,8 +3,6 @@
 Copyright (c) 2025 Zenith Structural Holdings LLC  
 All Rights Reserved
 
-Patent Pending: Application #63/938,607
-
 ## Terms
 
 This repository and its contents are provided for evaluation and research purposes.
@@ -17,12 +15,6 @@ This repository and its contents are provided for evaluation and research purpos
 ### Prohibited Use
 - Commercial use without explicit written permission
 - Redistribution or derivative works
-- Patent circumvention attempts
-
-### Patent Notice
-The Agnostic Equalization Mechanism (AEM) architecture and implementation are 
-subject to US Patent Application #63/938,607 and other pending intellectual 
-property protections.
 
 ### Commercial Licensing
 For commercial licensing inquiries, contact:  
