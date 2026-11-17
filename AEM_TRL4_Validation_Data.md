@@ -1,5 +1,8 @@
 # AEM TRL 4 Technical Appendix: HIL Validation Data
 
+> **Historical self-conducted test report (January 2026).** The figures below describe an earlier laboratory setup. They have not been independently audited here and do not establish crash-safe immutable storage or a production safety rating. See the [current status](README.md) and [bounded QEMU milestone](QEMU_MILESTONE_2026_11.md).
+
+
 **Validation Type:** Laboratory Component Testing (Self-Conducted)  
 **Date:** January 9, 2026  
 **Platform:** Broadcom BCM2837 (ARMv8-A) / OP-TEE 4.0.0  
@@ -51,7 +54,7 @@ The leap from the January 5th benchmark (**0.987ms**) to the January 9th benchma
 @manual{balousek2026aem,
   title  = {Agnostic Equalization Mechanism (AEM): Structural Veto Kernel v2.0},
   author = {Balousek, James},
-  note   = {US Patent App #63/938,607. Zenith Structural Holdings LLC},
+  note   = {Zenith Structural Holdings LLC; historical self-conducted report},
   year   = {2026},
   month  = {January},
   url    = {https://github.com/Zenith-AEM/AEM-Safety-Architecture}

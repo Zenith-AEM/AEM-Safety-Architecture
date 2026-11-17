@@ -1,4 +1,7 @@
 # AEM Production Validation Logs
+
+> **Historical self-conducted benchmark notes (January 2026).** The title and figures below reflect the original report; they are not production validation of the current architecture. See the [current status](README.md) and [bounded QEMU milestone](QEMU_MILESTONE_2026_11.md).
+
 ### Performance & Logic Verification (Jan 9, 2026)
 
 ---

@@ -1,4 +1,7 @@
 # Hardware-in-the-Loop (HIL) Validation Log
+
+> **Historical self-conducted test log (January 2026).** This records an earlier configuration and is not validation of the current QEMU decision path, rollback-resistant storage or protected physical output. See the [current status](../README.md) and [bounded QEMU milestone](../QEMU_MILESTONE_2026_11.md).
+
 **Date:** January 5, 2026  
 **Test ID:** HIL-G3-001  
 **Target:** Zenith AEM v1.1 (ARM TrustZone / OP-TEE)  

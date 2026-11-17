@@ -78,6 +78,5 @@
     "false_negative_rate": 0.001968503937007874,
     "structural_guarantee": "All three invariants enforced (IEL, FCP, TFP)"
   },
-  "timestamp": "2025-12-15T22:58:54.338859Z",
-  "patent_application": "63/938,607"
+  "timestamp": "2025-12-15T22:58:54.338859Z"
 }

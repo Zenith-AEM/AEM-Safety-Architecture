@@ -1,5 +1,8 @@
 # Threat Model & Security Posture
 
+> **Historical architecture threat sketch (January 2026).** The mitigations below are design intentions, not proof that a privileged host attacker cannot bypass the current prototype or alter its ledger. See the [current status](README.md) and [bounded QEMU milestone](QEMU_MILESTONE_2026_11.md).
+
+
 The AEM architecture assumes a Zero-Trust posture regarding the "Normal World" (Host OS). The system is designed to mitigate the following specific threat vectors:
 
 ## A. Stochastic Command Failure (AI Safety)

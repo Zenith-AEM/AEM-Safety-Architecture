@@ -1,4 +1,7 @@
 # AEM Technical Synopsis
+
+> **Historical technical synopsis (January 2026).** The latency and HIL figures below are self-reported measurements from an earlier configuration. They do not validate a physical sidecar, actuator isolation or the November 2026 QEMU path. See the [current status](README.md) and [bounded QEMU milestone](QEMU_MILESTONE_2026_11.md).
+
 **Date:** January 9, 2026 | **Validation Status:** TRL 4 
 
 ## 1. Breakthrough Performance

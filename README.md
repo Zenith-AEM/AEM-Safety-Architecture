@@ -1,60 +1,32 @@
-# Zenith Agnostic Equalization Mechanism (AEM)
+# Agnostic Equalization Mechanism (AEM)
 
-**Hardware-Isolated Safety Kernel for Autonomous Systems**
+AEM is a research architecture for deciding whether an autonomous controller's request may reach a defined effect. Its decision logic is intended to run outside the requester’s operating system. In the current QEMU test, fixed requests pass through a Gateway Authority to an OP-TEE trusted application in an **emulated Arm TrustZone secure world**. That application applies an exclusion list, an exact action vocabulary, an immediate risk check (FCP) and a five-step forward check (TFP), in that order. It keeps decision state and a ledger through OP-TEE storage.
 
-## ⚡ Quick Start: The Problem & Solution
+AEM could be integrated into a new system or deployed as a separate pass-through unit. Either form must eventually make the controlled output inaccessible to the requester without a permit. The current QEMU client writes a marker after a permit; the client itself controls that marker, so this run does not prove protected output enforcement.
 
-**The Problem:** AI systems (LLMs, autonomous agents) are probabilistic by nature. They can generate plausible-but-catastrophic commands like `THROTTLE_100` when the aircraft is already near structural limits. Traditional software safety checks can be bypassed, disabled, or corrupted by the very AI they're meant to control.
+Read [what remains the same and what has changed](AEM_PRINCIPLES_AND_STATUS.md) for a plain-language account of the project.
 
-**The Solution:** The AEM is a **hardware-rooted veto switch** that physically sits between your AI and your actuators. It hosts an Immutable Exclusion List (IEL) in ARM TrustZone's Secure World - isolated hardware that the AI literally cannot access or modify.
+## Current evidence (November 2026)
 
-**How It Works:**
-1. AI agent generates a command (e.g., `DEPLOY_FLAPS`)
-2. Command enters the Secured M2M Tunnel (shared memory bridge)
-3. AEM Safety Kernel checks it against the IEL in 54.4 microseconds
-4. If prohibited → command is **severed** before reaching hardware
-5. If allowed → command passes through to actuators
+The latest public milestone is a [two-boot QEMU decision and evidence test](QEMU_MILESTONE_2026_11.md). Nine fixed requests went through a Gateway Authority and child trusted application. Five permits produced five markers on a separate QEMU effect capture; the four vetoes produced none. A controlled restart preserved the readback state, and the final ledger and effect capture pass the published offline checker.
 
-**Current Status:** TRL 4 validated on Raspberry Pi 3 + OP-TEE. TRL 5 ready for integration testing with target platforms (Sikorsky MATRIX™, autonomous drones, database guardians).
+The [small replay packet](QEMU_MILESTONE_2026_11.md#replay-the-public-subset) contains the exact final ledger and effect bytes, checker source, its model and fixtures. The full run packet, including firmware images, disk snapshots, console logs and build inputs, is retained locally and is **not** included here. This public subset supports inspection of the captured decision and effect sequence; it cannot independently establish everything that ran in QEMU.
 
-## 🚀 Performance Breakthrough (Jan 9, 2026)
+### What this run does not show
 
-As of the latest validation, the AEM has achieved a hardware-isolated interdiction latency of **54.4 μs** (TRL 4), providing sub-millisecond safety determinism that exceeds current autonomous control requirements by several orders of magnitude.
+- **Production trust:** The signing material and demo HMAC key are development fixtures. QEMU emulates the secure world; it does not demonstrate physical isolation.
+- **Protected output:** The effect is a client marker, not a physical actuator. Privileged normal-world code could bypass the marker path.
+- **Rollback or crash durability:** The controlled restart shows state readback in this run. It does not prove rollback resistance or general crash durability; privileged code could also interfere with the storage backing.
+- **Independent implementation audit:** The public replay subset omits the trusted-application and Authority source. It checks the captured scenario, but cannot independently audit the secure-world implementation or establish hardware safety.
 
-## 🛠 Project Overview
+## Where this is going
 
-The AEM addresses command validation for untrusted AI agents in autonomous systems by hosting an **Immutable Exclusion List (IEL)** within the ARM TrustZone Secure World. It serves as a hardware-rooted "Structural Veto," physically intercepting and validating commands from untrusted Mission Applications (AI) before they reach flight actuators or secure databases.
+The QEMU run is a software baseline. The next proof work is to establish resistant state and evidence storage, and an output path the requester cannot drive without a permit. Board B's RPMB work is one research route for the storage question; it has not established safe target use or rollback resistance. A bench sidecar controlling one harmless load is a possible test configuration for output enforcement. An integrated design would have to prove the same boundary. Product hardware and deployment form have not been selected.
 
-## 📚 Key Technical Documentation
+## Earlier work and documents
 
-* **[Executive Summary](./EXECUTIVE_SUMMARY.md):** Vision for structural AGI safety architecture.
-* **[Technical Synopsis](./TECHNICAL_SYNOPSIS.md):** Consolidated technical overview and performance metrics.
-* **[TRL 4 Validation Data](./AEM_TRL4_Validation_Data.md):** Complete HIL validation results and benchmarking.
-* **[Benchmark Logs](./BENCHMARKS.md):** Raw data from 567 test pulses and logic verification.
-* **[Threat Model](./THREAT_MODEL.md):** Security posture and mitigation strategies.
-* **[Security Policy](./SECURITY.md):** Vulnerability disclosure and hardware-isolation protocols.
-* **[Project License](./LICENSE.md):** Patent Pending (#63/938,607) and usage terms.
+The January 2026 [Pi 3 HIL validation page](AEM_TRL4_Validation_Data.md) and [benchmark page](BENCHMARKS.md) report self-conducted measurements from an earlier configuration. Their TRL, latency and security claims should be read in that dated context. They are not validation of the current QEMU path or the proposed sidecar. The [executive summary](EXECUTIVE_SUMMARY.md), [technical synopsis](TECHNICAL_SYNOPSIS.md) and [threat model](THREAT_MODEL.md) also contain architecture goals and earlier claims; this README and the QEMU milestone state the current demonstrated boundary.
 
-## 📐 Architecture: The "Warm Path"
+The archived [technical volume](Zenith_HR0011SB20254XL-01_TechVolume.pdf) is an older proposal artifact; any patent or readiness language in it is historical and is not a current status claim. The [license](LICENSE.md) sets the terms for this repository. Research questions and technical scrutiny are welcome through GitHub issues.
 
-The AEM operates in the "Warm Path," sitting between the Normal World (Tier 1) and the Target System (Tier 3).
-
-![AEM Warm Path Architecture](./WARM_PATH.png)
-*Figure 1: AEM Hardware-in-the-Loop (HIL) Test Bed*
-
-* **Mission Orchestrator:** Ubuntu-based host generating AI agent commands (Normal World).
-* **Secured M2M Tunnel:** A shared-memory bridge where strings like `THROTTLE_100` are inspected.
-* **AEM Safety Kernel:** Raspberry Pi 3 running OP-TEE Secure World.
-* **Structural Veto:** Deterministic logic that severs unauthorized signals in 54.4 μs.
-    
-## 💻 Hardware Configuration
-
-* **Safety Kernel:** Raspberry Pi 3 (Broadcom BCM2837) running OP-TEE 4.0.0.
-* **Host Environment:** aarch64 Buildroot (Kernel 6.7.0).
-* **Interdiction Path:** Shared-Memory Zero-Copy Bridge.
-
-![AEM HIL Testbed Configuration](./HIL_Test_Bed.png)
-
----
-© 2026 Zenith Structural Holdings LLC. All Rights Reserved.
-
+© 2026 Zenith Structural Holdings LLC.
