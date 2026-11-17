@@ -1,0 +1,5 @@
+AEM_EFFECT_V1 request_id=tfp-demo-001 action=STATUS_CHECK
+AEM_EFFECT_V1 request_id=tfp-demo-005 action=config
+AEM_EFFECT_V1 request_id=tfp-demo-006 action=config
+AEM_EFFECT_V1 request_id=tfp-demo-007 action=config
+AEM_EFFECT_V1 request_id=tfp-demo-008 action=config

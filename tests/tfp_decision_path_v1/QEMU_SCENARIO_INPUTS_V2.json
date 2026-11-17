@@ -1,0 +1,19 @@
+{
+  "version": "tfp-qemu-scenario-v2-draft",
+  "common": {
+    "node_id": "aem-qemu-demo-v2",
+    "role": "DEMO",
+    "rule_id": 1
+  },
+  "steps": [
+    {"request_id": "tfp-demo-001", "timestamp": 2000001001, "nonce": 1000001001, "action": "STATUS_CHECK", "event": "AEM_PERMIT_GRANTED", "source_layer": null, "score_after": 0},
+    {"request_id": "tfp-demo-002", "timestamp": 2000001002, "nonce": 1000001002, "action": "REBOOT", "event": "AEM_IEL_VETO", "source_layer": "IEL", "score_after": 0},
+    {"request_id": "tfp-demo-003", "timestamp": 2000001003, "nonce": 1000001003, "action": "Network", "event": "AEM_UNKNOWN_ACTION_VETO", "source_layer": "UNKNOWN_ACTION", "score_after": 0},
+    {"request_id": "tfp-demo-004", "timestamp": 2000001004, "nonce": 1000001004, "action": "network", "event": "AEM_TFP_VETO", "source_layer": "TFP", "score_after": 0},
+    {"request_id": "tfp-demo-005", "timestamp": 2000001005, "nonce": 1000001005, "action": "config", "event": "AEM_PERMIT_GRANTED", "source_layer": null, "score_after": 1},
+    {"request_id": "tfp-demo-006", "timestamp": 2000001006, "nonce": 1000001006, "action": "config", "event": "AEM_PERMIT_GRANTED", "source_layer": null, "score_after": 2},
+    {"request_id": "tfp-demo-007", "timestamp": 2000001007, "nonce": 1000001007, "action": "config", "event": "AEM_PERMIT_GRANTED", "source_layer": null, "score_after": 3},
+    {"request_id": "tfp-demo-008", "timestamp": 2000001008, "nonce": 1000001008, "action": "config", "event": "AEM_PERMIT_GRANTED", "source_layer": null, "score_after": 4},
+    {"request_id": "tfp-demo-009", "timestamp": 2000001009, "nonce": 1000001009, "action": "config", "event": "AEM_TFP_VETO", "source_layer": "TFP", "score_after": 4}
+  ]
+}
