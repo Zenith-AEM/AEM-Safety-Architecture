@@ -12,7 +12,12 @@ The latest public milestone is a [two-boot QEMU decision and evidence test](QEMU
 
 The [small replay packet](QEMU_MILESTONE_2026_11.md#replay-the-public-subset) contains the exact final ledger and effect bytes, checker source, its model and fixtures. The full run packet, including firmware images, disk snapshots, console logs and build inputs, is retained locally and is **not** included here. This public subset supports inspection of the captured decision and effect sequence; it cannot independently establish everything that ran in QEMU.
 
-This test uses development signing material and a public demo HMAC key. QEMU emulates the secure world; it does not demonstrate physical isolation. The effect is a client marker, not a physical actuator. Privileged normal-world code could bypass that marker path or interfere with the storage backing. The controlled restart shows state readback in this run, not rollback resistance or general crash durability. It does not establish a production trust root or hardware safety. The public replay subset also omits the trusted-application and Authority source, so it cannot independently audit the secure-world implementation.
+### What this run does not show
+
+- **Production trust:** The signing material and demo HMAC key are development fixtures. QEMU emulates the secure world; it does not demonstrate physical isolation.
+- **Protected output:** The effect is a client marker, not a physical actuator. Privileged normal-world code could bypass the marker path.
+- **Rollback or crash durability:** The controlled restart shows state readback in this run. It does not prove rollback resistance or general crash durability; privileged code could also interfere with the storage backing.
+- **Independent implementation audit:** The public replay subset omits the trusted-application and Authority source. It checks the captured scenario, but cannot independently audit the secure-world implementation or establish hardware safety.
 
 ## Where this is going
 
